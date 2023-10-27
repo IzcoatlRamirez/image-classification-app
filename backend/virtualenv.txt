@@ -1,0 +1,13 @@
+
+
+--para crear el entorno virtual:
+
+    python -m venv mi_entorno_virtual
+
+--para activarlo desde la terminal:
+
+    mi_entorno_virtual\Scripts\activate
+
+--para desactivarlo:
+
+    deactivate

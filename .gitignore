@@ -1,0 +1,18 @@
+# Archivos y directorios generados por Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Directorio virtualenv/entorno virtual
+venv/
+env/
+*.pyc
+
+# Archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Carpeta donde se almacenan archivos de registro o datos generados
+logs/
+data/
