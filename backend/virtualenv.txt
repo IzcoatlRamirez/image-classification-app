@@ -1,13 +1,14 @@
-
-
 --para crear el entorno virtual:
 
     python -m venv mi_entorno_virtual
 
 --para activarlo desde la terminal:
 
-    mi_entorno_virtual\Scripts\activate
+    venv\Scripts\activate
 
 --para desactivarlo:
 
     deactivate
+
+-- para correr el backend con uvicorn usamos:
+    uvicorn main:app --reload
