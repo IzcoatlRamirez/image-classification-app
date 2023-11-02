@@ -1,0 +1,21 @@
+npm install @mui/material @emotion/react @emotion/styled
+npm install @fontsource/roboto
+npm install @mui/icons-material
+npm install @mui/lab notistack
+
+#importamos las fuentes en el archivo main.jsx
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+
+#importamos componentes que envuelven a app 
+import {CssBaseline} from '@mui/material'
+import {SnackbarProvider} from 'notistack';
+
+#envolvemos de la forma app en main.jsx:
+
+ <SnackbarProvider>
+      <CssBaseline/>
+      <App/>
+   </SnackbarProvider>
