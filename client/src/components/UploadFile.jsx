@@ -4,12 +4,15 @@ import { Box, Button, Typography } from "@mui/material";
 import Notification from "./Notification";
 import SearchResult from "./SearchResult";
 
+
 const UploadFile = () => {
   const [file, setFile] = useState(null);
   const [imageUrl, setImageUrl] = useState(null); // Para almacenar la URL de la imagen
   const fileInputRef = useRef(null);
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [predict, setPredict] = useState("");
+
+  const URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 
   const handleSnackbarOpen = () => {
     setSnackbarOpen(true);
@@ -56,7 +59,7 @@ const UploadFile = () => {
       const formData = new FormData();
       formData.append("file", file);
       try {
-        const response = await fetch("http://localhost:8000/api/upload", {
+        const response = await fetch(`${URL}/api/upload`, {
           method: "POST",
           body: formData,
         });
