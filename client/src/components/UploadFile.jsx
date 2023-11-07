@@ -72,7 +72,7 @@ const UploadFile = () => {
       }
     }
   };
-  <SearchResult data={predict} />;
+
 
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
