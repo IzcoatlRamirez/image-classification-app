@@ -3,8 +3,8 @@ import { pink } from "@mui/material/colors";
 import { useState, useEffect} from "react";
 
 function SearchResult({data}) {
-  const [titulo,setTitulo] = useState("")
   const [url,setUrl] = useState("")
+  const [abrir_en,setAbrir] = useState("")
   const [msg,setMsg] = useState("")
 
   useEffect(() => {
@@ -26,10 +26,8 @@ function SearchResult({data}) {
 
       const data = await response.json();
       if (data[1].length > 0) {
-        setTitulo(data[1][0])
         setUrl(data[3][0])
-        setMsg("Consulta mas informacion en:")
-
+        setAbrir("abrir en otra pestaña")
       } else {
         setText("No se encontró información en Wikipedia para esta predicción.");
       }
@@ -39,18 +37,15 @@ function SearchResult({data}) {
     }
     }
 
-
   return (
     <>
       <Typography variant="h2">
           {data.clase}
       </Typography>
       <div>
-        {titulo}
-      </div>
-      <div>
-        <Typography sx={{color: pink['A400']}}>{msg}</Typography>
-        <Link href={url} target="_blank">{url}</Link>
+          <Typography sx={{color: pink['A400']}}>{msg}</Typography>
+        <iframe src = {url} width="800" height="600" frameborder="0"></iframe><br></br>
+        <Link href={url} target="_blank">{abrir_en}</Link>
       </div>
     </>
   );
