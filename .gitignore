@@ -7,6 +7,8 @@ __pycache__/
 # Directorio virtualenv/entorno virtual
 venv/
 env/
+backend/mi_entorno_entorno_virtual/Lib/*
+node_modules
 *.pyc
 
 # Archivos generados por el sistema operativo
@@ -16,3 +18,5 @@ Thumbs.db
 # Carpeta donde se almacenan archivos de registro o datos generados
 logs/
 data/
+backend/mi_entorno_entorno_virtual/Lib/*
+backend/mi_entorno_entorno_virtual/*

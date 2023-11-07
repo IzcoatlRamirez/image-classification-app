@@ -3,7 +3,7 @@ import FileOpenIcon from "@mui/icons-material/FileOpen";
 import { Box, Button, Typography } from "@mui/material";
 import Notification from "./Notification";
 import SearchResult from "./SearchResult";
-
+import "./UploadFile.css"
 
 const UploadFile = () => {
   const [file, setFile] = useState(null);
@@ -72,11 +72,35 @@ const UploadFile = () => {
       }
     }
   };
+  const handleRemoveFile = () => {
+    setFile(null);
+    setImageUrl(null);
+    
+    // Reinicia el valor del input de archivo
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+  
 
 
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <div style={{ maxWidth: 350, minWidth: 350 }}>
+        <div style={{ maxWidth: 350, minWidth: 350 }}>
+          <Typography variant="h5" align="center" style={{ marginBottom: "1rem", color: "white" }}>
+            <div className="custom-font" style={{ marginBottom: "0.5rem" }}>
+              Bienvenido
+            </div>
+            <div className="custom-font">
+              Carga tu imagen aqui
+            </div>
+          </Typography>
+
+
+
+        </div>
+
         <div
           onDragOver={(e) => e.preventDefault()}
           onDrop={handleFileDrop}
@@ -92,11 +116,16 @@ const UploadFile = () => {
           }}
         >
           {imageUrl ? (
-            <img
-              src={imageUrl}
-              alt="Imagen seleccionada"
-              style={{ maxWidth: "100%", maxHeight: "100%" }}
-            />
+             <div>
+             <img
+               src={imageUrl}
+               alt="Imagen seleccionada"
+               style={{ maxWidth: "100%", maxHeight: "100%" }}
+             />
+             <Button variant="outlined" color="error" onClick={handleRemoveFile}>
+               Eliminar
+             </Button>
+           </div>
           ) : (
             <React.Fragment>
               <FileOpenIcon
@@ -135,7 +164,7 @@ const UploadFile = () => {
         />
       </div>
 
-      <Box sx={{ml:'5rem', color:'white'}}>
+      <Box sx={{ ml: '5rem', color: 'white' }}>
         <SearchResult data={predict}></SearchResult>
       </Box>
     </div>

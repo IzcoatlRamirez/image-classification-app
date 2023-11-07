@@ -1,0 +1,21 @@
+.custom-font{
+    font-family: 'Monserrat', sans-serif;
+    font-size: 35px;
+}
+
+@keyframes moveLetters {
+    0%, 100% {
+      transform: translateX(0);
+      color: white;
+    }
+    50% {
+      transform: translateX(20px);
+      color: blue;
+    }
+  }
+  
+  .custom-font {
+    font-family: 'Montserrat', sans-serif; /* Cambia 'Montserrat' al nombre de la fuente deseada */
+    animation: moveLetters 2s ease-in-out infinite;
+  }
+  
