@@ -15,7 +15,7 @@
   }
   
   .custom-font {
-    font-family: 'Montserrat', sans-serif; /* Cambia 'Montserrat' al nombre de la fuente deseada */
+    font-family: 'Montserrat', sans-serif;
     animation: moveLetters 2s ease-in-out infinite;
   }
   
