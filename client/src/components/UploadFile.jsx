@@ -3,7 +3,7 @@ import FileOpenIcon from "@mui/icons-material/FileOpen";
 import { Box, Button, Typography } from "@mui/material";
 import Notification from "./Notification";
 import SearchResult from "./SearchResult";
-import "./UploadFile.css";
+
 
 const UploadFile = () => {
   const [file, setFile] = useState(null);
@@ -85,7 +85,7 @@ const UploadFile = () => {
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <div style={{ maxWidth: 350, minWidth: 350 }}>
-        <div style={{ maxWidth: 350, minWidth: 350 }}>
+        {/* <div style={{ maxWidth: 350, minWidth: 350 }}>
           <Typography
             variant="h5"
             align="center"
@@ -96,7 +96,7 @@ const UploadFile = () => {
             </div>
             <div className="custom-font">Carga tu imagen aqui</div>
           </Typography>
-        </div>
+        </div> */}
 
         <div
           onDragOver={(e) => e.preventDefault()}
@@ -119,13 +119,6 @@ const UploadFile = () => {
                 alt="Imagen seleccionada"
                 style={{ maxWidth: "100%", maxHeight: "100%" }}
               />
-              <Button
-                variant="outlined"
-                color="error"
-                onClick={handleRemoveFile}
-              >
-                Eliminar
-              </Button>
             </div>
           ) : (
             <React.Fragment>
